@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { Container, Header, Logo, Link } from './Layout.styled';
 
-export const Layout = () => {
+ const Layout = () => {
   return (
     <Container>
       <Header>
@@ -12,9 +12,7 @@ export const Layout = () => {
           Search Movies Store
         </Logo>
         <nav>
-          <Link to="/" end>
-            Home
-          </Link>
+          <Link to="/">Home</Link>
           <Link to="/movies">Movies</Link>
         </nav>
       </Header>

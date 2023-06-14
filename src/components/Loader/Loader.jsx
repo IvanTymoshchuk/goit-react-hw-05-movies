@@ -1,6 +1,6 @@
 import { Dna } from 'react-loader-spinner';
 
-export const Loader = ({ isLoading }) => {
+ const Loader = ({ isLoading }) => {
   return (
     <Dna
       visible={isLoading}
@@ -16,3 +16,5 @@ export const Loader = ({ isLoading }) => {
     />
   );
 };
+
+export default Loader;
