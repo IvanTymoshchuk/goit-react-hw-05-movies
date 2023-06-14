@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import {  toast } from 'react-toastify';
+import { notify } from '../notify/notify';
 import { Form, Input, Button } from './SearchForm.styled';
 import { AiOutlineSearch } from 'react-icons/ai';
 
- const SearchForm = ({ onSearch }) => {
+
+const SearchForm = ({ onSearch }) => {
   const [query, setQuery] = useState('');
 
   const changeQuery = e => {
@@ -12,7 +15,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!query) return alert('Please enter a sometings');
+    if (!query) return toast.error('Please enter a sometings', notify);
     onSearch(query);
     setQuery('');
   };
@@ -31,6 +34,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
           <AiOutlineSearch size="15" />
         </Button>
       </Form>
+      
     </>
   );
 };
