@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { fetchTrending } from '../service/fetchAPI';
 import MoviesList from 'components/MoviesList/MoviesList';
+import Title from '../components/Title/Title';
 import { Loader } from 'components/Loader/Loader';
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      <h1> Trending today</h1>
+      <Title title="Trending today" />
       <MoviesList movies={movies} />
       {loader && <Loader />}
     </>
