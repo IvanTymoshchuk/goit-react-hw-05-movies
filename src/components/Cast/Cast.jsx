@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCast } from '../../service/fetchAPI';
 import { AiOutlineFileImage } from 'react-icons/ai';
-import { CastCard, CastContainer, Paragraf, Img } from './Cast.styled';
+import { CastCard, CastContainer, Paragraf } from './Cast.styled';
 
 const Cast = () => {
   const [moviesCast, setMoviesCast] = useState([]);
@@ -20,7 +20,7 @@ const Cast = () => {
         moviesCast.map(({ id, profile_path, character, name }) => (
           <CastCard key={id}>
             {profile_path ? (
-              <Img
+              <img
                 src={`https://image.tmdb.org/t/p/w200${profile_path}`}
                 alt={name}
               />
@@ -30,10 +30,7 @@ const Cast = () => {
 
             <Paragraf>{name}</Paragraf>
 
-            <Paragraf>
-              Character
-              <br /> {character.substr(0, 9)}
-            </Paragraf>
+            <Paragraf>Character : {character.substr(0, 9)}</Paragraf>
           </CastCard>
         ))
       ) : (
