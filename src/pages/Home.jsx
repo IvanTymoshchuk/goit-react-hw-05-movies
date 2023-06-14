@@ -10,8 +10,8 @@ const Home = () => {
   useEffect(() => {
     setLoader(true);
     fetchTrending()
-      .then(res => {
-        setMovies(res.results);
+      .then(({ results }) => {
+        setMovies(results);
       })
       .finally(() => {
         setLoader(false);
