@@ -9,7 +9,7 @@ const MoviesDetails = () => {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const buttonBack = location.state?.from ?? `/movies`;
+  const buttonBack = location.state?.from ?? `/`;
 
   useEffect(() => {
     fetchDetailsMovie(movieId).then(setMoviesDetails);
