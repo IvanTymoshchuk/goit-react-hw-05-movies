@@ -20,6 +20,7 @@ const MoviesDetails = () => {
 
   return (
     <>
+ 
       <ButtonBack to={buttonBack} />
       <Wrap>
         <Img

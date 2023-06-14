@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchSearchMovies } from '../service/fetchAPI';
 import SearchForm from 'components/SearchForm/SearchForm';
 import MoviesList from 'components/MoviesList/MoviesList';
+import Title from '../components/Title/Title';
 import Loader from 'components/Loader/Loader';
 
 const Movies = () => {
@@ -32,6 +33,7 @@ const Movies = () => {
 
   return (
     <>
+       <Title title="Search for your movie 😎" />
       {error && <h2>{error.message}</h2>}
       <SearchForm value={moviesName} onSearch={handleOnSubmit} />
       {movies.length > 0 && <MoviesList movies={movies} />}
