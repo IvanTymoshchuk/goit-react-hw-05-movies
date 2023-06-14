@@ -2,7 +2,13 @@ import { useEffect, useState } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { fetchDetailsMovie } from '../../service/fetchAPI';
 import ButtonBack from 'components/ButtonBack/ButtonBack';
-import { Wrap, Img, Container, Links } from './MoviesDetails.styled';
+import {
+  Wrap,
+  Img,
+  Container,
+  Links,
+  WrapContainer,
+} from './MoviesDetails.styled';
 
 const MoviesDetails = () => {
   const [moviesDetails, setMoviesDetails] = useState({});
@@ -20,28 +26,30 @@ const MoviesDetails = () => {
 
   return (
     <>
- 
       <ButtonBack to={buttonBack} />
       <Wrap>
-        <Img
-          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
-          alt={title}
-        />
+        <WrapContainer>
+          <Img
+            src={`https://image.tmdb.org/t/p/w300${poster_path}`}
+            alt={title}
+          />
 
-        {title && (
-          <h2>
-            {title} {release_date.substr(0, 4)}
-          </h2>
-        )}
+          {title && (
+            <h2>
+              {title} {release_date.substr(0, 4)}
+            </h2>
+          )}
 
-        <p>User Score: {vote_average && Math.floor(vote_average * 10)}%</p>
-        <h2>Overview</h2>
-        <p>{overview}</p>
-        <h2>Genres</h2>
-        {genres && <p>{genres.map(({ name }) => name).join(', ')}</p>}
+          <p>User Score: {vote_average && Math.floor(vote_average * 10)}%</p>
+          <h2>Overview</h2>
+          <p>{overview}</p>
+          <h2>Genres</h2>
+          {genres && <p>{genres.map(({ name }) => name).join(', ')}</p>}
+        </WrapContainer>
       </Wrap>
-      <h3>Additional information</h3>
+
       <Container>
+        <h3>Additional information</h3>
         <li>
           <Links to="cast">Cast</Links>
         </li>
