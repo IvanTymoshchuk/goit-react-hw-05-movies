@@ -1,10 +1,33 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import bg from '../Img/bg.jpg';
 
 export const Container = styled.div`
-  max-width: 960px;
+    max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  height: 100vh;
+
+  &:before {
+    content: '';
+    background-image: linear-gradient(
+        rgba(106, 191, 235, 0),
+        rgba(106, 191, 235, 1)
+      ),
+      url(${bg});
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    opacity: 0.6;
+    filter: blur(1px);
+  }
 `;
 
 export const Header = styled.header`
