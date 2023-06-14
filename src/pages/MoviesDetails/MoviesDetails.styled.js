@@ -2,19 +2,15 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 export const Wrap = styled.div`
-  display: block;
-  text-align: center;
-  border-bottom: 1px solid black;
+ display: flex;
+  justify-content: center;
 `;
 export const WrapContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+ margin-right: 30px;
 `;
 
 export const Img = styled.img`
-  width: 300px;
+  width: 250px;
 `;
 
 export const Container = styled.ul`

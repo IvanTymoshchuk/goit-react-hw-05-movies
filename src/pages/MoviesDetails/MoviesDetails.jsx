@@ -33,7 +33,8 @@ const MoviesDetails = () => {
             src={`https://image.tmdb.org/t/p/w300${poster_path}`}
             alt={title}
           />
-
+        </WrapContainer>
+        <div>
           {title && (
             <h2>
               {title} {release_date.substr(0, 4)}
@@ -45,7 +46,7 @@ const MoviesDetails = () => {
           <p>{overview}</p>
           <h2>Genres</h2>
           {genres && <p>{genres.map(({ name }) => name).join(', ')}</p>}
-        </WrapContainer>
+        </div>
       </Wrap>
 
       <Container>
