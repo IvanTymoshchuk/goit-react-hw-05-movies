@@ -17,7 +17,7 @@ cursor: pointer;
 
   :hover {
     color: white;
-    background-color: orange;
+    background-color: tomato;
   }
 `;
 
