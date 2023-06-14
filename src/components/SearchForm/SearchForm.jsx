@@ -28,7 +28,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
           onChange={changeQuery}
         />
         <Button type="submit">
-          <AiOutlineSearch size="13" />
+          <AiOutlineSearch size="15" />
         </Button>
       </Form>
     </>
